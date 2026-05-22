@@ -1,0 +1,26 @@
+MiAO Agent session: session2
+Type 'exit' to finish.
+
+You> What do you remember about me, and what lunch would you suggest?
+[tool] recall_context args={"query": "what do you remember about me, and what lunch would you suggest?", "limit": 4} verification=passed
+Agent> From memory I found: favorite_color=green; dietary_preference=vegetarian. A vegetarian lunch like a tofu bowl or veggie sandwich fits you better. I also remember green is your favorite color, so I would pick the green-themed cafe if there are two similar options.
+
+You> Also, what is 12 x 8 + 4?
+[tool] calculate args={"expression": "12 x 8 + 4"} verification=recovered
+Agent> The math result is 100 after normalizing the expression.
+
+You> exit
+Session summary saved:
+{
+  "session_id": "session2",
+  "ended_at": "2026-05-22T07:00:46+00:00",
+  "facts_learned": [],
+  "user_topics": [
+    "What do you remember about me, and what lunch would you suggest?",
+    "Also, what is 12 x 8 + 4?"
+  ],
+  "assistant_highlights": [
+    "From memory I found: favorite_color=green; dietary_preference=vegetarian. A vegetarian lunch like a tofu bowl or veggie sandwich fits you better. I also remember green is your favorite color, so I would pick the green-themed cafe if there are two similar options.",
+    "The math result is 100 after normalizing the expression."
+  ]
+}

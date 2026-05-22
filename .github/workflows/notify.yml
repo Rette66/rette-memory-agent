@@ -1,0 +1,13 @@
+name: Notify Challenge Push
+on: [push]
+jobs:
+  notify:
+    if: github.actor != 'miaojan'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify LarkMail
+        run: |
+          curl -s -X POST "https://interview.miao-ai.com/api/challenge/webhook" \
+            -H "Content-Type: application/json" \
+            -H "X-Challenge-Token: eee4e114d0712d98f6e9717b3843ad7b" \
+            -d '{"repo": "${{ github.repository }}", "ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "pusher": "${{ github.actor }}"}'
